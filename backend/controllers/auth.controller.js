@@ -51,8 +51,8 @@ export const signup = async (req, res) => {
       res.status(400).json({ error: "invalid user details" });
     }
   } catch (error) {
-    console.log("error in signup controller", error);
-    res.status(500).json({ error: "internal server error" });
+    // console.log("error in signup controller", error);
+    res.status(500).json({ error: "internal server error singnup" });
   }
 };
 
@@ -85,8 +85,8 @@ export const login = async (req, res) => {
       coverimg: existinguser.coverimg,
     });
   } catch (error) {
-    console.log("error in login controller", error);
-    res.status(500).json({ error: "internal server error" });
+    // console.log("error in login controller", error);
+    res.status(500).json({ error: "internal server error login" });
   }
 };
 
@@ -95,8 +95,8 @@ export const logout = async (req, res) => {
     res.cookie("jwttoken", "", { maxAge: 0 });
     res.status(200).json({ message: "Logout successfully" });
   } catch (error) {
-    console.log("error in logout controller", error);
-    res.status(500).json({ error: "internal server error" });
+    // console.log("error in logout controller", error);
+    res.status(500).json({ error: "internal server error logout" });
   }
 };
 
@@ -106,7 +106,7 @@ export const getMe = async (req, res) => {
     // const currentuser = req.currentuser
     res.status(200).json(currentuser);
   } catch (error) {
-    console.log("error in getme controller", error);
-    res.status(500).json({ error: "internal server error" });
+    // console.log("error in getme controller", error);
+    res.status(500).json({ error: "internal server error get me" });
   }
 };

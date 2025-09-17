@@ -12,8 +12,8 @@ export const getNotifications= async (req, res) => {
         res.status(200).json(sendnotification)
 
     } catch (error) {
-        onsole.log("Error in getNotifications function", error.message);
-		res.status(500).json({ error: "Internal Server Error" });
+        // console.log("Error in getNotifications function", error.message);
+		res.status(500).json({ error: "Internal Server Error getNotifications" });
     }
 }
 export const deleteNotifications= async (req, res) => {
@@ -23,7 +23,7 @@ export const deleteNotifications= async (req, res) => {
         res.status(200).json({message: "Notifications deleted successfully"})
         
     } catch (error) {
-        onsole.log("Error in deleteNotifications function", error.message);
-		res.status(500).json({ error: "Internal Server Error" });
+        // console.log("Error in deleteNotifications function", error.message);
+		res.status(500).json({ error: "Internal Server Error deletegetNotifications" });
     }
 }

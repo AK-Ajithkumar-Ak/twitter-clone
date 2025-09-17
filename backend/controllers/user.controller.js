@@ -14,8 +14,8 @@ export const getprofile= async (req, res) => {
         }
         res.status(200).json(user)
     } catch (error) {
-        console.log("ERROR in getprofile controller:", error);
-        res.status(500).json({error: error.message})
+        // console.log("ERROR in getprofile controller:", error);
+        res.status(500).json({error: error.message +"getprofile",})
     }
 }
 
@@ -40,8 +40,8 @@ export const suggesteduser= async (req, res) => {
         res.status(200).json(suggestedUsers)
 
     } catch (error) {
-        console.log("ERROR in suggesteduser controller:", error);
-        res.status(500).json({error: error.message})
+        // console.log("ERROR in suggesteduser controller:", error);
+        res.status(500).json({error: error.message+ "suggesteduser"})
     }
 }
 
@@ -83,8 +83,8 @@ export const follow_unfollow= async (req, res) => {
             return res.status(200).json({message: "User followed successfully"})
         }
     } catch (error) {
-        console.log("ERROR in follow_unfollow controller:", error);
-        res.status(500).json({error: error.message})
+        // console.log("ERROR in follow_unfollow controller:", error);
+        res.status(500).json({error: error.message+ "follow_unfollow"})
     }
 }
 
@@ -163,7 +163,7 @@ export const profile_info= async (req, res) => {
         return res.status(200).json(currentuser)
 
     } catch (error) {
-        console.log("ERROR in profile_info controller:", error);
-        res.status(500).json({error: error.message})
+        // console.log("ERROR in profile_info controller:", error);
+        res.status(500).json({error: error.message+ "profile_info"})
     }
 }
