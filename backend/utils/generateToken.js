@@ -11,7 +11,7 @@ export const generate_token_set_cookie = (userId, res) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     // sameSite: process.env.NODE_ENV === "production"? "strict": "none",
-    sameSite: "strict",
+    sameSite: "none",
     maxAge: 15 * 24 * 60 * 60 * 1000, // millisecond
   });
 };
