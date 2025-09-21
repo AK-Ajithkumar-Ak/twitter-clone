@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 // console.log(path.join(__dirname, "frontend", "dist"));
 
-const allow= ["http://localhost:5173","http://localhost:3000","https://twitter-clone-6wcl.onrender.com"]
+const allow= ["http://localhost:5173","http://localhost:3000","http://dev.localhost:3000","https://twitter-clone-6wcl.onrender.com"]
 app.use(cors({
   // origin: "http://localhost:5173", // Replace with your frontend URL
   origin: function (origin, calback) {

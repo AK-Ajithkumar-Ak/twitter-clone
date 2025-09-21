@@ -38,10 +38,10 @@ function Signuppage() {
                 if (!res.ok) {
                     throw new Error(data.error || "Failed to create account");
                 }
-                console.log(data);
+                // console.log(data);
                 return data
             } catch (error) {
-                console.log(error);
+                // console.log(error);
                 throw error
             }
         },
