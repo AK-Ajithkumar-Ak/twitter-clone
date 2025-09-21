@@ -1,0 +1,60 @@
+.tech-parant{
+    margin: 10px 10px 200px 10px;
+}
+.myflex{
+    display: flex;
+}
+.mytech{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(39, 96, 202);
+}
+table{
+    min-width: 400px;
+    max-width: 700px;
+    margin-bottom: 40px;
+    border: 1px solid white;
+    overflow-x: scroll;
+    /* border-collapse: collapse; */
+}
+table tr{
+    border-bottom: 1px solid gray !important;
+}
+tr:hover{
+    background-color: rgba(36, 33, 33, 0.907);
+}
+table tr td:first-child, tr th{
+    text-transform: uppercase;
+}
+td{
+    text-transform: capitalize;
+}
+td, th{
+    /* background-color: rgb(77, 66, 5); */
+    margin: 2px;
+    padding: 8px;
+    border-right: 1px solid gray;
+}
+
+
+.text_low {
+    text-transform: lowercase !important;
+}
+.num{
+    color: rgb(4, 43, 240);
+    /* font-weight: bold; */
+}
+.red{
+    color: red;
+}
+.etc{
+    color: rgb(25, 242, 25);
+}
+.cap{
+    text-transform: capitalize !important;
+}
+.link{
+    color: gray;
+}

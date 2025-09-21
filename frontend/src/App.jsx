@@ -12,8 +12,11 @@ import Loadingspinner from "./components/common/Loadingspinner"
 
 import Sidebar from "./components/common/Sidebar"
 import Rightpanel from "./components/common/Rightpanel"
+import { Technical_skill } from "./pages/Technical_skill"
+import { useState } from "react"
 
 function App() {
+  let [viewskill, setviewskill] = useState(false)
   const {data: authUser, isLoading, isError, error}= useQuery({
     // we use queryKey to give a unique name to our query and refer to it later
     queryKey:["authUser"],
@@ -50,23 +53,28 @@ if (isLoading) {
   )
 }
 if (isError) {
-  console.log("main app error:", error);
+  console.log("main app error:", error.message);
 }
+
   return (
+    <div>
     <div className='flex max-w-6xl mx-auto'>
-      {/* <h1 className="text-red-400 font-bold">ok</h1> */}
 			{/* Common component, it's not wrapped with Routes */}
-      {/* <h1 className="text-4xl font-bold text-blue-600 text-center mt-10">Hello, Tailwind!</h1> */}
-      {authUser && <Sidebar />}
+      {authUser && !viewskill && <Sidebar setviewskill={setviewskill} />}
       <Routes>
-        <Route path="/" element={authUser? <HomePage />: <Navigate to={"/login"}/>}/>
+        <Route path="/" element={authUser? <HomePage setviewskill={setviewskill} />: <Navigate to={"/login"}/>}/>
         <Route path="/login" element={!authUser? <Loginpage />: <Navigate to={"/"}/>}/>
         <Route path="/signup" element={!authUser? <Signuppage />: <Navigate to={"/"}/>}/>
-        <Route path="/notifications" element={authUser? <Notificationpage />: <Navigate to={"/login"}/>}/>
-        <Route path="/profile/:username" element={authUser? <Profilepage />: <Navigate to={"/login"}/>}/>
+        <Route path="/notifications" element={authUser? <Notificationpage setviewskill={setviewskill} />: <Navigate to={"/login"}/>}/>
+        <Route path="/profile/:username" element={authUser? <Profilepage setviewskill={setviewskill}/>: <Navigate to={"/login"}/>}/>
+        <Route path="/ajith-kumar/technical-skill" element={<Technical_skill setviewskill={setviewskill}/>}/>
       </Routes>
-      {authUser && <Rightpanel />}
+      {authUser &&  !viewskill && <Rightpanel />}
       <Toaster />
+    </div>
+      {/* <Routes>
+        <Route path="/ajith-kumar/technical-skill" element={<Technical_skill setviewskill={setviewskill}/>}/>
+      </Routes> */}
     </div>
   )
 }

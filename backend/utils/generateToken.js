@@ -8,9 +8,9 @@ export const generate_token_set_cookie = (userId, res) => {
   // console.log("encpcheck:", process.env.NODE_ENV === "production"? "strict": "none",);
   
   res.cookie("jwttoken", token, {
-    httpOnly: true, // 
-    secure: process.env.NODE_ENV === "production",  // 
-    // sameSite: process.env.NODE_ENV === "production"? "strict": "none", // 
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    // sameSite: process.env.NODE_ENV === "production"? "strict": "none",
     sameSite: "strict",
     maxAge: 15 * 24 * 60 * 60 * 1000, // millisecond
   });

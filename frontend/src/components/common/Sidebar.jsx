@@ -10,7 +10,7 @@ import {toast} from "react-hot-toast";
 import { BaseUrl } from "../../utils/constant";
 
 
-function Sidebar() {
+function Sidebar({setviewskill}) {
     const queryclient = useQueryClient();
     const {mutate: logout}= useMutation({
         mutationFn: async () => {
@@ -72,6 +72,9 @@ function Sidebar() {
 							<FaUser className='w-6 h-6' />
 							<span className='text-lg hidden md:block'>Profile</span>
 						</Link>
+					</li>
+					<li className="flex justify-center md:justify-start">
+						<Link to={"/ajith-kumar/technical-skill"} onClick={()=>setviewskill(true)} ><button className="btn btn-success rounded-full">My Skill</button></Link>
 					</li>
 				</ul>
 				{authUser && (

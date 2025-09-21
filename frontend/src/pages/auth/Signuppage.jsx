@@ -66,6 +66,7 @@ function Signuppage() {
 				<XSvg className='lg:w-2/3 fill-white' />
 			</div>
 			<div className='flex-1 flex flex-col justify-center items-center'>
+				<Link to={"/ajith-kumar/technical-skill"} className="btn btn-success absolute top-5 rounded-full ">Ajith kumar Technical skill</Link>
 				<form className='lg:w-2/3  mx-auto md:mx-20 flex gap-4 flex-col' onSubmit={handleSubmit}>
 					<XSvg className='w-24 lg:hidden fill-white' />
 					<h1 className='text-4xl font-extrabold text-white'>Join today.</h1>

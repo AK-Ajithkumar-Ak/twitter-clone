@@ -18,7 +18,10 @@ import useUpdateuserProfile from "../../hooks/useUpdateuserProfile";
 import { BaseUrl } from "../../utils/constant";
 
 
-function Profilepage() {
+function Profilepage({setviewskill}) {
+		useEffect(()=>{
+		setviewskill(false)
+	},[])
     const [coverimg, setcoverimg] = useState(null);
 	const [profileimg, setprofileimg] = useState(null);
 	const [feedType, setFeedType] = useState("posts");

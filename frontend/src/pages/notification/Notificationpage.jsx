@@ -6,9 +6,13 @@ import Loadingspinner from '../../components/common/Loadingspinner';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { FaHeart, FaUser } from 'react-icons/fa';
 import { BaseUrl } from '../../utils/constant';
+import { useEffect } from 'react';
 
 
-function Notificationpage() {
+function Notificationpage({setviewskill}) {
+		useEffect(()=>{
+			setviewskill(false)
+		},[])
     const queryclient = useQueryClient();
     const {data: notifications, isLoading,}= useQuery({
         queryKey:["notifications"],		// queryKey to give a unique name to our query and refer to it later

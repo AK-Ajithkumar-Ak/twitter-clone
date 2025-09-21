@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Posts from "../../components/common/Posts";
 import CreatePost from "./CreatePost";
 
 
-const HomePage = () => {
+const HomePage = ({setviewskill}) => {
+	useEffect(()=>{
+		setviewskill(false)
+	},[])
     const [feedType, setFeedType]= useState("forYou")
     	const [postlength, setpostlength] = useState(0);
 	
